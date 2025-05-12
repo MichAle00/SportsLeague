@@ -1,9 +1,4 @@
 <?
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbName = "myDB";
-
     function createDB($server, $user, $pass)
     {
         $conn = new mysqli($server, $user, $pass);
@@ -22,6 +17,8 @@
         {
             echo "Database created succesfully";
         }
+
+        $conn->close();
     }
 
     function createTables($server, $user, $pass, $db)
@@ -202,5 +199,16 @@
         {
             echo "Error creating table player_statistics";
         }
+
+        $conn->close();
+    }
+
+    function retrieveData($server, $user, $pass, $db, $data)
+    {
+        $conn = new mysqli($server, $user, $pass, $db);
+
+        
+
+        $conn->close();
     }
 ?>
