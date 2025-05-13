@@ -30,11 +30,11 @@ export const addTeam = async (req, res) => {
 
 export const updateTeam = async (req, res) => {
 	const { id } = req.params;
-	const { name, image } = req.body;
+	const { name, logo } = req.body;
 	try {
 		await pool.query(
-			'UPDATE teams SET name = ?, image = ? WHERE id = ?',
-			[name, image, id]
+			'UPDATE teams SET name = ?, logo = ? WHERE id = ?',
+			[name, logo, id]
 		);
 		res.json({ message: "Team updated successfully" });
 	} catch (error) {
