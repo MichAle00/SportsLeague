@@ -14,7 +14,7 @@ export const addSport = async (req, res) => {
 	const { name, image } = req.body;
 	try {
 		const [result] = await pool.query(
-			'INSERT INTO sports (name image) VALUES (?, ?)',
+			'INSERT INTO sports (name, image) VALUES (?, ?)',
 			[name, image]
 		);
 		res.status(201).json({ id: result.insertID });
